@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>画像切り替え</title>
+<style>
+  body { margin: 0; background: #fff; display: flex; flex-direction: column; height: 100vh; }
+  img { flex: 9; object-fit: contain; width: 100%; background: white; }
+  .buttons { flex: 1; display: flex; }
+  button {
+    flex: 1;
+    font-size: 2em;
+    -webkit-user-select: none; /* Safariでのテキスト選択禁止 */
+    user-select: none;         /* 標準のテキスト選択禁止 */
+  }
+</style>
+</head>
+<body>
+  <img id="display" src="ni.jpg">
+  <div class="buttons">
+    <button ontouchstart="show('a.jpg')" ontouchend="show('ni.jpg')">あ</button>
+    <button ontouchstart="show('i.jpg')" ontouchend="show('ni.jpg')">い</button>
+    <button ontouchstart="show('u.jpg')" ontouchend="show('ni.jpg')">う</button>
+    <button ontouchstart="show('e.jpg')" ontouchend="show('ni.jpg')">え</button>
+    <button ontouchstart="show('o.jpg')" ontouchend="show('ni.jpg')">お</button>
+    <button ontouchstart="show('n.jpg')" ontouchend="show('ni.jpg')">ん</button>
+    <button ontouchstart="show('be.jpg')" ontouchend="show('ni.jpg')">べ</button>
+  </div>
+<script>
+function show(image) {
+  document.getElementById("display").src = image;
+}
+</script>
+</body>
+</html>
