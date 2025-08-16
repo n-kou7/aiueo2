@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>画像切り替え</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    -webkit-touch-callout: none; /* 長押しメニュー禁止 */
+    -webkit-user-select: none;   /* テキスト選択禁止 */
+    user-select: none;
+    touch-action: manipulation;  /* ダブルタップ拡大やジェスチャー抑制 */
+  }
+  img {
+    flex: 1 1 auto; /* 画像が可能な限り高さを取る */
+    object-fit: contain;
+    width: 100%;
+    background: white;
+  }
+  .buttons {
+    flex: 0 0 auto; /* ボタン部分は固定 */
+    display: flex;
+    height: 12vh; /* 画面の高さの12%くらいに調整 */
+  }
+  button {
+    flex: 1;
+    font-size: min(4vw, 3vh); /* 画面に応じた文字サイズ */
+    -webkit-user-select: none;
+    user-select: none;
+  }
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+<body>
+  <img id="display" src="ni.jpg">
+  <div class="buttons">
+    <button ontouchstart="show('a.jpg')" ontouchend="show('ni.jpg')">あ</button>
+    <button ontouchstart="show('i.jpg')" ontouchend="show('ni.jpg')">い</button>
+    <button ontouchstart="show('u.jpg')" ontouchend="show('ni.jpg')">う</button>
+    <button ontouchstart="show('e.jpg')" ontouchend="show('ni.jpg')">え</button>
+    <button ontouchstart="show('o.jpg')" ontouchend="show('ni.jpg')">お</button>
+    <button ontouchstart="show('n.jpg')" ontouchend="show('ni.jpg')">ん</button>
+    <button ontouchstart="show('be.jpg')" ontouchend="show('ni.jpg')">べ</button>
+  </div>
+<script>
+function show(image) {
+  document.getElementById("display").src = image;
+}
+</script>
+</body>
+</html>
